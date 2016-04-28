@@ -4,11 +4,11 @@ general:
       - master
       - production
 
-machine: adjusting the VM to your preferences and requirements
+machine: 
   python:
     version: 2.7.6
   Node:
-    version: 4.4.2
+    version: 5.1.1
   services:
     - docker
 
