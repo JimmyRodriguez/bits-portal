@@ -16,7 +16,7 @@ machine:
 
 dependencies: 
   pre:
-    - pip install awscli
+    - pip install awscli 
 
   override:
     - docker info
@@ -34,5 +34,5 @@ deployment:
   hub:
     branch: master
     commands: 
-      - docker login -e jimmy_sidney@hotmail.es -u jimmy_sidney@hotmail.es -p amberley4
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push jimmyrosa/demo:$DOCKER_TAG
