@@ -16,7 +16,8 @@ machine:
 
 dependencies: 
   pre:
-    pip install awscli
+    -apt-get update && upgrade
+    -pip install awscli
 
 database: 
 
