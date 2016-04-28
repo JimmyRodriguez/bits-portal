@@ -18,6 +18,10 @@ dependencies:
   pre:
     - pip install awscli
 
+  override:
+    - docker info
+    - docker build -t jimmyrosa/sunodejs:$DOCKER_TAG
+
 database: 
 
 test: 
