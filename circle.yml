@@ -11,11 +11,13 @@ machine:
     version: 5.11.0
   services:
     - docker
-
-
-checkout: 
+  environment:
+    DOCKER_TAG: $CIRCLE_BUILD_NUM-&CIRCLE_SHA1
 
 dependencies: 
+  pre:
+    pip install awscli
+    apt-get update && upgrade
 
 database: 
 
