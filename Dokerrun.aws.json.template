@@ -1,1 +1,16 @@
-Dokerrun.aws.json.template
+
+ "AWSEBDockerrunVersion": "1",
+ "Authentication": {
+   "Bucket": "s3-demo-bucket-bit",
+   "Key": "dockercfg"
+ },
+ "Image": {
+   "Name": "jimmyrosa/sunodejs:<TAG>",
+   "Update": "true"
+ },
+ "Ports": [
+   {
+     "ContainerPort": "3000"
+   }
+ ]
+}
