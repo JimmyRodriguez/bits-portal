@@ -18,7 +18,6 @@ dependencies:
   pre:
     - pip install awscli 
     - sudo apt-get update
-    - ./bit-portal
 
   override:
     - docker info
