@@ -17,7 +17,7 @@ machine:
 dependencies: 
   pre:
     - pip install awscli 
-    - sudo apt-get update && upgrade
+    - sudo apt-get update
 
   override:
     - docker info
