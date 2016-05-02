@@ -1,7 +1,7 @@
 #! /bin/bash
+set -e
 
 SHA1=$1
-
 EB_BUCKET=s3-demo-bucket-bit
 
 
