@@ -22,7 +22,8 @@ dependencies:
   override:
     - docker info
     - docker build -t jimmyrosa/demo:$DOCKER_TAG .
-    - aws s3 sync views s3://$BUCKET_BITS/
+    - aws s3 sync --acl public-read views s3://$BUCKET_BITS/ --cache-control "public, max-age=31536000" --expires "date -d +1year +"%a, %d %b %Y %H:%M:%S GMT""
+    #- aws s3 sync views s3://$BUCKET_BITS/
     #- aws s3 sync --acl public-read views s3://$BUCKET_BITS/ 
 
 database: 
