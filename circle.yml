@@ -22,7 +22,7 @@ dependencies:
   override:
     - docker info
     - docker build -t jimmyrosa/demo:$DOCKER_TAG .
-    - aws s3 sync --acl public-read bit-portal s3://$BUCKET_BIT/ 
+    - aws s3 sync --acl public-read circleCi s3://$BUCKET_BIT/ 
 
 database: 
   override:
