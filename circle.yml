@@ -22,7 +22,7 @@ dependencies:
   override:
     - docker info
     - docker build -t jimmyrosa/demo:$DOCKER_TAG .
-    - aws s3 sync --acl public-read bit-portal s3://BUCKET_BIT/
+    - aws s3 sync --acl public-read prod s3://$BUCKET_BIT/ --cache-control "public, max-age=31536000" --expires "date -d +1year +"%a, %d %b %Y %H:%M:%S GMT""
 
 database: 
   override:
@@ -37,4 +37,4 @@ deployment:
     branch: master
     commands: 
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push jimmyrosa/demo:$DOCKER_TAG
+      - ./deploy.sh &CIRCLE_SHA1
