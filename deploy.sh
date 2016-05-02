@@ -1,7 +1,7 @@
-# deploy.sh
-#! /bin/bashSHA1=$1
+#! /bin/bash
 
 SHA1=$1
+
 EB_BUCKET=s3-demo-bucket-bit
 
 
