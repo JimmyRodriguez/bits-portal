@@ -1,11 +1,14 @@
 # deploy.sh
 #! /bin/bashSHA1=$1
 
+SHA1=$1
+EB_BUCKET=s3-demo-bucket-bit
+
+
 # Deploy image to Docker Hub
 docker push jimmyrosa/sunodejs:$SHA1
 
 # Create new Elastic Beanstalk version
-EB_BUCKET=s3-demo-bucket-bit
 DOCKERRUN_FILE=$SHA1-Dockerrun.aws.json
 
 sed "s/<TAG>/$SHA1/" < Dockerrun.aws.json.template > $DOCKERRUN_FILE
