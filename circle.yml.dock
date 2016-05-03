@@ -22,7 +22,8 @@ dependencies:
   override:
     - docker info
     - docker build -t jimmyrosa/demo:$DOCKER_TAG .
-    - aws s3 sync --acl public-read bit-portal s3://BUCKET_BIT/
+    #- aws s3 sync . s3://$BUCKET_BITS/ 
+    - aws s3 sync --acl public-read views s3://$BUCKET_BITS/ 
 
 database: 
   override:
@@ -30,12 +31,12 @@ database:
 
 test: 
   override:
-    - docker run -d -p 3000:3000 jimmyrosa/demo:$DOCKER_TAG; sleep 10
+    - docker run -d -p 3500:3500 jimmyrosa/demo:$DOCKER_TAG; sleep 10
+    #- curl --retry 10 --retry-delay 5 -v http://localhost:3500
    
 deployment:
   hub:
     branch: master
     commands: 
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push jimmyrosa/demo:$DOCKER_TAG
-
+      - bash deploy.sh $DOCKER_TAG $BUCKET_BITS
