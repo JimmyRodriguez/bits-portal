@@ -25,6 +25,8 @@ dependencies:
     - aws s3 sync --acl public-read . s3://BUCKET_BIT/
 
 database: 
+  pre:
+    - docker pull jimmyrosa/demo:25-c2deda8fe5315dc37f64aeffd8caef6d33843957
   override:
     - echo "nope"
 
