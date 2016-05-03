@@ -6,7 +6,7 @@ BUCKET=$2
 
 
 # Deploy image to Docker Hub
-docker push jimmyrosa/sunodejs:$SHA1
+#docker push jimmyrosa/sunodejs:$SHA1
 
 # Create new Elastic Beanstalk version
 DOCKERRUN_FILE=$SHA1-Dockerrun.aws.json
