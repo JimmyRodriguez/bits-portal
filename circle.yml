@@ -25,7 +25,7 @@ dependencies:
     #- aws s3 sync . s3://$BUCKET_BITS/ 
     - aws s3 sync --acl public-read views s3://$BUCKET_BITS/ 
     - echo "$DOCKER_TAG"
-    - docker pull jimmyrosa/demo:$DOCKER_TAG
+    - docker push jimmyrosa/demo:$DOCKER_TAG
 
 database: 
   override:
