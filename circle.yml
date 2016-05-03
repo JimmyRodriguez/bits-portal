@@ -25,14 +25,14 @@ dependencies:
     #- aws s3 sync . s3://$BUCKET_BITS/ 
     - aws s3 sync --acl public-read views s3://$BUCKET_BITS/ 
     - echo "$DOCKER_TAG"
+    - docker pull jimmyrosa/demo:$DOCKER_TAG
 
 database: 
   override:
     - echo "nope"
 
 test:
-  pre: 
-   - docker pull jimmyrosa/demo:25-c2deda8fe5315dc37f64aeffd8caef6d33843957
+
   override:
     - docker run -d -p 3500:3500 jimmyrosa/demo:$DOCKER_TAG; sleep 10
     #- curl --retry 10 --retry-delay 5 -v http://localhost:3500
