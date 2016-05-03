@@ -4,9 +4,11 @@ set -e
 SHA1=$1
 BUCKET=$2
 
+ACCESS_KEY=$AWS_ACCESS_KEY_ID
+SECRET_KEY=$AWS_SECRET_KEY_ID
 
 # Deploy image to Docker Hub
-#docker push jimmyrosa/sunodejs:$SHA1
+docker push jimmyrosa/sunodejs:$SHA1
 
 # Create new Elastic Beanstalk version
 DOCKERRUN_FILE=$SHA1-Dockerrun.aws.json
