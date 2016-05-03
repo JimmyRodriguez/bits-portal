@@ -8,9 +8,4 @@
    "Name": "jimmyrosa/sunodejs:<TAG>",
    "Update": "true"
  },
- "Ports": [
-   {
-     "ContainerPort": "3000"
-   }
- ]
 }
